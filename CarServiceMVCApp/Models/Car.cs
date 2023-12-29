@@ -18,5 +18,7 @@ namespace CarServiceMVCApp.Models
 
 
         public string? Notes { get; set; }
+
+        public List<RepairJob> RepairJobs { get; set; }
     }
 }

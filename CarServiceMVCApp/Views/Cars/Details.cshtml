@@ -36,6 +36,11 @@
         </dd>
     </dl>
 </div>
+
+<div>
+    <a asp-controller="RepairJobs" asp-action="Create" asp-route-carId="@Model.Id">Add repair job</a>
+</div>
+
 <div>
     <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
     <a asp-action="Index">Back to List</a>
