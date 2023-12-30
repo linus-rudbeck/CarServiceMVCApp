@@ -34,7 +34,9 @@ namespace CarServiceMVCApp.Controllers
             }
 
             var car = await _context.Cars
+                .Include(c => c.RepairJobs)
                 .FirstOrDefaultAsync(m => m.Id == id);
+
             if (car == null)
             {
                 return NotFound();

@@ -11,8 +11,8 @@ namespace CarServiceMVCApp.Data
         {
         }
 
-        public DbSet<Car> Cars { get; set; }
+        public virtual DbSet<Car> Cars { get; set; }
 
-        public DbSet<RepairJob> RepairJobs { get; set; }
+        public virtual DbSet<RepairJob> RepairJobs { get; set; }
     }
 }

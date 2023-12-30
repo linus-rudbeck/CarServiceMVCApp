@@ -21,6 +21,8 @@ namespace CarServiceMVCApp.Models
         public string? Description { get; set; }
         public bool Completed { get; set; } =false;
 
+        public string? TechnicianName { get; set; }
+
         [ValidateNever]
         public Car Car { get; set; }
     }

@@ -65,12 +65,20 @@ namespace CarServiceMVCApp.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,StartDate,EndDate,RepairName,Description,Completed,Car")] RepairJob repairJob)
         {
+            var car = await _context.Cars.FirstOrDefaultAsync(c => c.Id == repairJob.Car.Id);
+
+            if (car == null)
+            {
+                return NotFound();
+            }
+
+            repairJob.Car = car;
 
             if (ModelState.IsValid)
             {
                 _context.Add(repairJob);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Details", "Cars", new { car.Id });
             }
 
             return View(repairJob);

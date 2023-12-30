@@ -42,6 +42,15 @@
 </div>
 
 <div>
+    <ul>
+        @foreach(var repairJob in Model.RepairJobs)
+        {
+            <li>@repairJob.RepairName</li>
+        }
+    </ul>
+</div>
+
+<div>
     <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
     <a asp-action="Index">Back to List</a>
 </div>
